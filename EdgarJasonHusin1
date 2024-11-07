@@ -49,21 +49,21 @@ public class EdgarJasonHusin1 {
                     System.out.println("Anda memilih penghitungan permutasi!");
                     long hasilPermutasi = faktorial(n)/faktorial(n-r);
                     System.out.printf("""
-                                        n
+                                        %d
                             nPr = -------------- = %d
-                                      (n-r)!
+                                      (%d-%d)!
                                       
-                            """,hasilPermutasi);
+                            """,n,hasilPermutasi,n,r);
                 }
                 case 2 -> {
                     System.out.println("Anda memilih penghitungan kombinasi!");
                     long hasilKombinasi = (faktorial(n))/(faktorial(n-r)*faktorial(r));
                     System.out.printf("""
-                                         n
+                                         %d
                             nCr = --------------- = %d
-                                    (n-r)! x r!
+                                    (%d-%d)! x %d!
                                     
-                            """,hasilKombinasi);
+                            """,n,hasilKombinasi,n,r,r);
                 }
             }
         }
@@ -71,7 +71,7 @@ public class EdgarJasonHusin1 {
     }
 
     private static long faktorial(int bil) {
-        if (bil==1)
+        if (bil==0)
             return 1;
         else
             return (bil * faktorial(bil-1));
