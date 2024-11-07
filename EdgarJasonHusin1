@@ -50,20 +50,20 @@ public class EdgarJasonHusin1 {
                     long hasilPermutasi = faktorial(n)/faktorial(n-r);
                     System.out.printf("""
                                         %d
-                            nPr = -------------- = %d
+                            %dP%d = -------------- = %d
                                       (%d-%d)!
                                       
-                            """,n,hasilPermutasi,n,r);
+                            """,n,n,r,hasilPermutasi,n,r);
                 }
                 case 2 -> {
                     System.out.println("Anda memilih penghitungan kombinasi!");
                     long hasilKombinasi = (faktorial(n))/(faktorial(n-r)*faktorial(r));
                     System.out.printf("""
                                          %d
-                            nCr = --------------- = %d
+                            %dC%d = --------------- = %d
                                     (%d-%d)! x %d!
                                     
-                            """,n,hasilKombinasi,n,r,r);
+                            """,n,n,r,hasilKombinasi,n,r,r);
                 }
             }
         }
