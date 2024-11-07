@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+//PROGRAM MENGHITUNG PERMUTASI KOMBINASI MENGGUNAKAN METHOD
+// EDGAR JASON HUSIN
+// 245150201111047
+// TIF - F
+
+public class EdgarJasonHusin1 {
+
+    public static Scanner scan  = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int pilihan;
+
+        do{
+            System.out.println("""
+                    PROGRAM PENGHITUNG PERMUTASI DAN KOMBINASI
+                    1. Menghitung Permutasi
+                    2. Menghitung Kombinasi
+                    3. Keluar
+                    """);
+
+            System.out.print("Masukkan pilihan Anda: ");
+            pilihan = scan.nextInt();
+
+            if (pilihan == 3) {
+                System.out.println("Anda memilih keluar! Terima kasih!");
+                break;
+            }
+            if (pilihan != 1 && pilihan != 2){
+                System.out.println("Pilihan tidak valid! Silahkan ulangi\n");
+                continue;
+            }
+
+                System.out.print("Masukkan nilai n: ");
+                int n = scan.nextInt();
+
+                System.out.print("Masukkan nilai r: ");
+                int r = scan.nextInt();
+
+            if(n<r){
+                System.out.println("n harus lebih besar dari r, silahkan ulangi\n");
+                continue;
+            }
+
+            switch(pilihan){
+
+                case 1 -> {
+                    System.out.println("Anda memilih penghitungan permutasi!");
+                    long hasilPermutasi = faktorial(n)/faktorial(n-r);
+                    System.out.printf("""
+                                        n
+                            nPr = -------------- = %d
+                                      (n-r)!
+                                      
+                            """,hasilPermutasi);
+                }
+                case 2 -> {
+                    System.out.println("Anda memilih penghitungan kombinasi!");
+                    long hasilKombinasi = (faktorial(n))/(faktorial(n-r)*faktorial(r));
+                    System.out.printf("""
+                                         n
+                            nCr = --------------- = %d
+                                    (n-r)! x r!
+                                    
+                            """,hasilKombinasi);
+                }
+            }
+        }
+        while(pilihan != 3);
+    }
+
+    private static long faktorial(int bil) {
+        if (bil==1)
+            return 1;
+        else
+            return (bil * faktorial(bil-1));
+    }
+}
